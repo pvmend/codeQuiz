@@ -1,7 +1,6 @@
-//var btn = document.querySelector('#buttons');
+
 // selectors 
-// var timerEl = document.getElementById('countdown');
-// var quizQuestions = document.getElementById('quizQuestions');
+
 var timeEl = document.querySelector("#time-left");
 var startGame = document.querySelector('#start');
 var startScreen = document.querySelector("#start-screen");
@@ -9,12 +8,15 @@ var quizScreen = document.querySelector("#quiz-screen");
 var endScreen = document.querySelector("#end-screen");
 var quizQuestions = document.querySelector("#quizQuestions");
 var quizChoices = document.querySelector("#choices");
+var choiceBox = document.querySelector(".option");
+var button = document.createElement("button");
+var responseAns = document.querySelector(".response");
 // var quizContainer = document.querySelector("#")
 
 
 // functional variables
 // 
-var timeLeft = 10;
+var timeLeft = 30;
 var totalScore;
 var timeInterval;
 var questionIndex = 0;
@@ -22,11 +24,13 @@ var choiceIndex = 0;
 
 
 
+
+
 const questions = [
     {
         question: "Which value is a string?",
-        choices: [42, "%", "var", "'Hello'"],
-        answer: "'string'"
+        choices: [" 42", " %", " var", "'Hello'"],
+        answer: "'Hello'"
         },     
     {
         question: "Which is not a way to declare a variable ",
@@ -64,81 +68,102 @@ function gameOver(){
     quizScreen.setAttribute("class", "hide");
     endScreen.removeAttribute("class");
 
+
     
 
 
 
 
 }
+
 function renderQuestion(){
-    quizQuestions.textContent = questions[0].question;
+    if (questionIndex === questions.length || timeLeft === 0){
+        
+        gameOver();
+
+    } else {
+        var currentQuestion = questions[questionIndex];
+        console.log(currentQuestion);
+        console.log(currentQuestion.question);
+        console.log(currentQuestion.choices);
+        quizQuestions.textContent = currentQuestion.question;
+        quizChoices.innerHTML='';
+        
+          for (var i =0; i < currentQuestion.choices.length ;i++){
+            var choice = currentQuestion.choices[i];
+            //console.log(choice);
+            var choiceEl = document.createElement('button');
+            choiceEl.textContent = choice;
+            quizChoices.appendChild(choiceEl);
     
     
-    //  for (var i =0; i < questions.length;i++){
+         };
 
-    //     quizQuestions.textContent = questions[i].question;
-
-
-    //  };
-
+    }
+   
+     
 
 
 }
-function renderChoices(){
-    quizChoices.textContent = questions[0].choices;
+// moves to next question
+// check answer 
+// increment the index
+// check to see if there are more questions
+// decrement time for wrong answers
+
+function onclickEvent(event){
+    var push = event.target;
+   // console.log(push.textContent);
+    
+    //console.log(questions[questionIndex].answer);
+    if (push.textContent === questions[questionIndex].answer){
+        
+        responseAns.textContent = "Correct";
+        
+        renderQuestion();
+        
+    } else {
+        responseAns.textContent= "Wrong"
+        timeLeft -=5;
+        renderQuestion();
+
+        
+        
+        
+
+        
+
+
+    }
+   
+    questionIndex++;
+    
 
 };
-renderChoices();
-// var timeLeft = 30;
 
 
-// call this loop to cycle through quiz questions and answers 
-// use random??
+
+
+
+
+
 // add eventlistener to click answers and count score
 // local storage to save scores
 
-// function displayQuiz(){
 
-//     for (var i =0; i < questions.length; i++){
 
-//         quizQuestions.textContent = questions.question[i];
-//     };
 
-// }
-
-//if (answer to question == true){
-//  move to next question
-//} else{
-//  timeLeft -= 10;
-//  move to the next question
-//}
-
-// .addEventListener('click', function(){
-// 
-//})
 
 // need prevent default
-// function gameOver(){
-//     finished = alert("Game over");
-//     // show score
-//     // enter intials 
-//     // show high scores
-//     restart = confirm("play again?")
-//     if (restart == true){
-//         // function  to start quiz
-//     } else {
-//         // show high scores
-//     }
 
-
-// }
 
 // const highScores = JSON.parse(localStorage.getItem('totalScore'));
-
+// button.addEventListener("click",onclickEvent);
 startGame.addEventListener('click',start);
+quizChoices.onclick = onclickEvent;
 
 
 
 
-//btn.addEventListener('click', )
+
 

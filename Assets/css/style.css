@@ -9,6 +9,10 @@
     width:100vw;
     height: 100vh;        
   }
+h2{
+  display: flex;
+  justify-content: center;
+}
 .hide{
   display: none;
 }
@@ -36,9 +40,10 @@
     text-align: center;
     
     }
-.option{    
+button{    
+    display: block;
     padding: 10px;
-    width: 15vw;
+    width: 10vw;
     height: 10vh;
     font-size: larger;
     background-color: lightskyblue;
@@ -49,6 +54,9 @@
     background-color: lightgoldenrodyellow;
     }
 
+
+
+  
   @media screen and (max-width: 600px) {
      .container{
         min-width: 40rem;
@@ -92,12 +100,12 @@ div {
     
 } */
 
-/* #choices {
+#choiceButtons {
     background-color: #00ced1;
     padding: 20px;
     width: 200px;
    
-} */
+}
 #highScore{
   width: 80%;
   padding: 12px 20px;

@@ -14,9 +14,7 @@
         
     </header>
     <div id = 'start-screen'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt ratione quae eum, explicabo similique recusandae quas earum. Impedit dolorem quasi, cupiditate esse ipsam distinctio eum maxime optio? Nemo, nam.
-
-        </p>
+        
         <button id = "start"> start</button>
     </div>
     <div id = "quiz-screen" class="hide">
@@ -24,10 +22,31 @@
         <h2 id = "quizQuestions">
 
         </h2>
-        <div class ="choices-container" id="choices">
-            choices go here </div>
+        <!-- ol -->
+        <ol id="choices" >
+            choices go here 
+          
+            
+        
+        </ol>
+        <p class="response"></p>
     </div>
     <div id = "end-screen" class="hide" >
+        <label> Enter your intials</label><br>
+        <input type="text" id = "intials"><br>
+        <button type="button" id="myIntials">submit</button>
+
+    
+    </div>
+
+    <div id = "highScoreScreen" class = "hide">
+        <h2>HIGH SCORE</h2>
+        <ol id="highScores">
+
+        </ol>
+        <label> Scores</label><br>
+        
+        <button type="button" id="clearScore">submit</button>
 
     </div>
 
@@ -45,7 +64,7 @@
     <button class = 'option' id="op3">option3 </button>
      
     <button class = 'option' id="op4">option4 </button>
-    </div> -->
+    </div>  -->
 
     <script src="./Assets/js/script.js"></script>
 </body>
