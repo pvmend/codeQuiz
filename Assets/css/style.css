@@ -69,10 +69,13 @@ button{
     }
   }
 
-/* body{
-    background-color: rgb(34, 34, 84);
 
-  } */
+
+#time-left{
+  font-size: 35px;
+  
+}
+
 /* #main{
     width: 300px;
     height: 100px;
@@ -87,6 +90,9 @@ button{
     justify-content: center;
     padding: 10px;
     
+}
+#msg{
+  font-size: 45px;
 }
 /*
 div {
