@@ -9,6 +9,14 @@
     width:100vw;
     height: 100vh;        
   }
+  h1{
+    font-size: 50px ;
+    color:rgb(111, 111, 182);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    
+}
 h2{
   display: flex;
   justify-content: center;
@@ -83,14 +91,7 @@ button{
     background-color: cadetblue;
     margin-left: 240px;
 } */
- h1{
-    font-size: 50px ;
-    color:rgb(111, 111, 182);
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    
-}
+
 #msg{
   font-size: 45px;
 }
@@ -133,5 +134,18 @@ div {
   margin-top: 75px;
   object-fit: contain;
 
+
+}
+.scoreText{
+  font-size: 40px;
+  display: block;
+
+}
+#highScores{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 55px;
+  font-weight: bold;
 
 }
