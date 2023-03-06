@@ -11,6 +11,8 @@ var quizChoices = document.querySelector("#choices");
 var choiceBox = document.querySelector(".option");
 var button = document.createElement("button");
 var responseAns = document.querySelector(".response");
+var scoreScreen = document.querySelector("#highScoreScreen");
+
 // var quizContainer = document.querySelector("#")
 
 
@@ -21,7 +23,7 @@ var totalScore;
 var timeInterval;
 var questionIndex = 0;
 var choiceIndex = 0;
-
+var counter = 0;
 
 
 
@@ -30,18 +32,18 @@ const questions = [
     {
         question: "Which value is a string?",
         choices: [" 42", " %", " var", "'Hello'"],
-        answer: "'Hello'"
+        answer: "'Hello'",
         },     
     {
         question: "Which is not a way to declare a variable ",
         choices: ["let", "make", "var", "const"],
-        answer: "make"
+        answer: "make",
 
     },
     {
         question: "How do you add 2 strings together?",
         choices: ["*", "+", "%", "/"],
-        answer: "+"
+        answer: "+",
     },
 
 ];
@@ -83,9 +85,9 @@ function renderQuestion(){
 
     } else {
         var currentQuestion = questions[questionIndex];
-        console.log(currentQuestion);
-        console.log(currentQuestion.question);
-        console.log(currentQuestion.choices);
+        // console.log(currentQuestion);
+        // console.log(currentQuestion.question);
+        // console.log(currentQuestion.choices);
         quizQuestions.textContent = currentQuestion.question;
         quizChoices.innerHTML='';
         
@@ -100,6 +102,7 @@ function renderQuestion(){
          };
 
     }
+    
    
      
 
@@ -118,25 +121,28 @@ function onclickEvent(event){
     //console.log(questions[questionIndex].answer);
     if (push.textContent === questions[questionIndex].answer){
         
-        responseAns.textContent = "Correct";
+        // alert("Correct");
+        // counter +=1;
+
         
         renderQuestion();
+        // responseAns.textContent = "";
         
     } else {
         responseAns.textContent= "Wrong"
         timeLeft -=5;
         renderQuestion();
-
-        
-        
-        
-
-        
-
+        //responseAns.textContent = "";
+        // counter -=1;
 
     }
    
+    if (questionIndex === questions.length && push.textContent === questions[questionIndex].answer ){
+        gameOver();
+    }
+   
     questionIndex++;
+    
     
 
 };

@@ -12,6 +12,7 @@
 h2{
   display: flex;
   justify-content: center;
+  font-size: 50px;
 }
 .hide{
   display: none;
@@ -20,6 +21,9 @@ h2{
 .title {
     text-align: center;
 }
+
+
+
 .container {
     display: block;
     margin: 80px auto;
@@ -42,13 +46,15 @@ h2{
     }
 button{    
     display: block;
-    padding: 10px;
-    width: 10vw;
-    height: 10vh;
-    font-size: larger;
     background-color: lightskyblue;
     border-radius: 25%;
     margin-left: 30px;
+    margin-inline: auto;
+    margin-top: 8rem;
+    width: auto;
+    padding: 5px 90px;
+    font-size: 60px;
+    height: fit-content
     }
 .option:hover{
     background-color: lightgoldenrodyellow;
@@ -112,4 +118,14 @@ div {
   margin: 8px 20px;
   box-sizing: border-box;
   font-size: 18px;
+}
+
+#scoreInput{
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin-top: 75px;
+  object-fit: contain;
+
+
 }
