@@ -1,6 +1,6 @@
 
 // selectors 
-
+var msgDiv = document.querySelector("#msg")
 var timeEl = document.querySelector("#time-left");
 var startGame = document.querySelector('#start');
 var startScreen = document.querySelector("#start-screen");
@@ -12,6 +12,8 @@ var choiceBox = document.querySelector(".option");
 var button = document.createElement("button");
 var responseAns = document.querySelector(".response");
 var scoreScreen = document.querySelector("#highScoreScreen");
+var submitIntials = document.querySelector("#myIntials");
+var intials = document.querySelector("#intials");
 
 // var quizContainer = document.querySelector("#")
 
@@ -24,7 +26,8 @@ var timeInterval;
 var questionIndex = 0;
 var choiceIndex = 0;
 var counter = 0;
-
+var yourScore = localStorage.getItem('time-left');
+// or is it #time-left
 
 
 
@@ -64,15 +67,12 @@ function start (){
     },1000);
     renderQuestion();
 };
+
 function gameOver(){
     
     clearInterval(timeInterval);
     quizScreen.setAttribute("class", "hide");
     endScreen.removeAttribute("class");
-
-
-    
-
 
 
 
@@ -85,9 +85,7 @@ function renderQuestion(){
 
     } else {
         var currentQuestion = questions[questionIndex];
-        // console.log(currentQuestion);
-        // console.log(currentQuestion.question);
-        // console.log(currentQuestion.choices);
+
         quizQuestions.textContent = currentQuestion.question;
         quizChoices.innerHTML='';
         
@@ -104,10 +102,8 @@ function renderQuestion(){
     }
     
    
-     
-
-
 }
+
 // moves to next question
 // check answer 
 // increment the index
@@ -126,10 +122,12 @@ function onclickEvent(event){
 
         
         renderQuestion();
+        
         // responseAns.textContent = "";
         
     } else {
-        responseAns.textContent= "Wrong"
+
+        //responseAns.textContent= "Wrong"
         timeLeft -=5;
         renderQuestion();
         //responseAns.textContent = "";
@@ -137,7 +135,7 @@ function onclickEvent(event){
 
     }
    
-    if (questionIndex === questions.length && push.textContent === questions[questionIndex].answer ){
+    if (questionIndex === questions.length ){
         gameOver();
     }
    
@@ -147,7 +145,30 @@ function onclickEvent(event){
 
 };
 
+function displayMessage(type, message) {
+    msgDiv.textContent = message;
+    msgDiv.setAttribute("class", type);
+  };
 
+
+submitIntials.addEventListener("click", function(event){
+    event.preventDefault();
+    intials = document.querySelector("#intials").value;
+    if (intials === ""){
+        displayMessage("error", "Intials cannot be blank");
+        
+    } else{
+        displayMessage("Success", "Congrats");
+        localStorage.setItem("intials", intials);
+
+        document.querySelector("#intials").value = '';
+    }
+    
+
+ 
+
+}
+);
 
 
 
