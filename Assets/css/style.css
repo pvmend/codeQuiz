@@ -80,12 +80,12 @@ button{
 
 
 #time-left{
-  font-size: 40px;
+  font-size: 30px;
   
 }
 
 .response{
-  font-size: 45px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -98,7 +98,7 @@ button{
 } */
 
 #msg{
-  font-size: 45px;
+  font-size: 40px;
 }
 /*
 div {
@@ -121,7 +121,7 @@ div {
 #choiceButtons {
     background-color: #00ced1;
     padding: 20px;
-    width: 200px;
+    width: 150px;
    
 }
 #highScore{
@@ -150,7 +150,7 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 55px;
+  font-size: 50px;
   font-weight: bold;
 
 }
