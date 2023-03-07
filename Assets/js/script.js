@@ -69,7 +69,7 @@ function start (){
     },1000);
     //console.log("checkQ:", questionIndex);
     renderQuestion();
-};
+}; 
 
 function gameOver(){
     let scoreTimeLeft = document.querySelector("#scoreTimeLeft");
@@ -107,6 +107,7 @@ function renderQuestion(){
               
 
                 if ( e.target.innerText === questions[questionIndex].answer){
+                    responseAns.textContent="CORRECT";
                     
             
                     
@@ -114,6 +115,7 @@ function renderQuestion(){
             
    
                     timeLeft -=5;
+                    responseAns.textContent="WRONG";
           
       
             

@@ -1,13 +1,19 @@
 # 04 Web APIs: Code Quiz
 
+## Description
 
+Created a quiz which has a timer and saves the user high score to the local storage and gives the user an option to put their intials clear the scores or play again.
+
+## Installation
+
+For installation I created a Github https:// page.
 
 
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality:
+![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/c%3A/Users/paulv/Documents/bootcamp/homeworks/Week_04/codeQuiz/Assets/mockUpQuiz.png?version%3D1678154819202)
 
-(./Assets/mockUpQuiz.png)
 
 
 ## License
