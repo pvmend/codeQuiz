@@ -30,8 +30,6 @@ var questionIndex = 0;
 var choiceIndex = 0;
 var counter = 0;
 var highScoresList = [];
-//var yourScore = localStorage.getItem('time-left');
-// or is it #time-left
 
 
 
@@ -69,7 +67,7 @@ function start (){
     
 
     },1000);
-    console.log("checkQ:", questionIndex);
+    //console.log("checkQ:", questionIndex);
     renderQuestion();
 };
 
@@ -97,20 +95,19 @@ function renderQuestion(){
 
         quizQuestions.textContent = currentQuestion.question;
         quizChoices.innerHTML='';
-        console.log("quizChoices:", quizChoices)
+        //console.log("quizChoices:", quizChoices)
         
           for (var i =0; i < currentQuestion.choices.length ;i++){
             var choice = currentQuestion.choices[i];
-            //console.log(choice);
             var choiceEl = document.createElement('button');
             choiceEl.textContent = choice;
             choiceEl.addEventListener("click", function(e){
-                console.log("check:", e.target.innerText);
+               // console.log("check:", e.target.innerText);
 
               
 
                 if ( e.target.innerText === questions[questionIndex].answer){
-        
+                    
             
                     
                 } else {
@@ -122,7 +119,7 @@ function renderQuestion(){
             
                 }
 
-                console.log("check:",questions.length - 1 , questionIndex)
+                //console.log("check:",questions.length - 1 , questionIndex)
                 questionIndex++;
                    
                 if( (questions.length) == questionIndex){
@@ -143,57 +140,8 @@ function renderQuestion(){
     }
     
    
-}
+};
 
-// moves to next question
-// check answer 
-// increment the index
-// check to see if there are more questions
-// decrement time for wrong answers
-
-
-/*
-function onclickEvent(event){
-    console.log("clicked", event.target , questionIndex)
-    var push = event.target;
-   // console.log(push.textContent);
-    
-    console.log(push.textContent, "::", questions[questionIndex].answer);
-    if (push.textContent === questions[questionIndex].answer){
-        
-        // alert("Correct");
-        // counter +=1;
-
-        console.log("check:",questions.length , questionIndex)
-        if(questions.length == questionIndex){
-            //show game over
-        } else {
-            renderQuestion();
-        }
-        
-       
-
-        // responseAns.textContent = "";
-        
-    } else {
-
-        //responseAns.textContent= "Wrong"
-        timeLeft -=5;
-        renderQuestion();
-        //responseAns.textContent = "";
-        // counter -=1;
-
-    }
-   
-    if (questionIndex === questions.length ){
-        gameOver();
-    }
-   
-    questionIndex++;
-    
-    
-
-};*/
 
 function displayMessage(type, message) {
     msgDiv.textContent = message;
@@ -268,6 +216,12 @@ clearScoreBtn.addEventListener('click', function(event){
     event.preventDefault();
     
     localStorage.clear();
+    
+    //var x = document.getElementById("highScores").childElementCount;
+    var highScores = document.getElementById('highScores');
+    highScores.innerHTML = '';
+   
+
     
 });
 
