@@ -33,9 +33,14 @@
     </div>
     <div id = "end-screen" class="hide" >
         <div id="scoreInput">
-        <label> Enter your intials</label><br>
+            <div id="scoreTimeLeft"></div>
+        
+            <label> Enter your intials</label><br>
         <input type="text" id = "intials"><br>
-    </div>
+        </div>
+
+        
+        
         <div id="msg"></div>
         <button type="button" id="myIntials">submit</button>
 
@@ -44,12 +49,13 @@
 
     <div id = "highScoreScreen" class = "hide">
         <h2>HIGH SCORE</h2>
-        <ol id="highScores">
+        <ul id="highScores" class = "scoreUl">
 
-        </ol>
-        <label> Scores</label><br>
+        </ul>
+        <!-- <label class ="scoreText"> Scores</label><br> -->
         
-        <button type="button" id="clearScore">submit</button>
+        <button type="button" id="clearScore">clear score</button> <br>
+        <button type="button" id="replay">replay</button>
 
     </div>
 
