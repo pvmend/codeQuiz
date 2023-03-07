@@ -31,7 +31,7 @@ var choiceIndex = 0;
 var counter = 0;
 var highScoresList = [];
 
-
+// my quiz questions and answers
 
 const questions = [
     {
@@ -193,8 +193,6 @@ submitIntials.addEventListener("click", function(event){
 
 
 
-// add eventlistener to click answers and count score
-// local storage to save scores
 
 
 
